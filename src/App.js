@@ -17,28 +17,25 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App container">
-      <div className="container quote">
+    <div id="quote-box" className="App quote">
         <figure>
-        <blockquote class="blockquote">
-          <p className="mb-0">"{quotes.text}"</p>
-        </blockquote>
-        <figcaption className="blockquote-footer">
-          Author: {quotes.author}
-        </figcaption>
+          <blockquote id="text" class="blockquote">
+            <p className="mb-0">"{quotes.text}"</p>
+          </blockquote>
+          <figcaption id="author" className="blockquote-footer">
+            Author: {quotes.author}
+          </figcaption>
         </figure>
-        <div className="bttn">
-        <button onClick={getQuote} className="btn btn-outline-success">Get quote</button>
+        
         <a 
+          id="tweet-quote"
           href={`https://twitter.com/intent/tweet?text=${quotes.text}`}
-          className="btn btn-outline-primary"
+          className="btn btn-info"
           target="_blank"
           rel="noopener noreferrer">
           Tweet
-        </a>
-        </div>
-      </div>
-      
+        </a>  
+        <button id="new-quote" onClick={getQuote} className="btn btn-primary">New Quote</button>
     </div>
   );
 }
